@@ -9,7 +9,7 @@ PHONE.
 A FEW SCREENSHOTS OF THE APP:
 
 Splash Screen:
-<img src="ttps://user-images.githubusercontent.com/35567444/103439909-215cbb80-4c67-11eb-8eab-479d031f1ead.jpg" width="300" height="621">
+<img src="https://user-images.githubusercontent.com/35567444/103439936-71d41900-4c67-11eb-9af0-a4d72de154d7.jpg" width="300" height="621">
 
 Profile Page:
 <img src="https://user-images.githubusercontent.com/35567444/103438870-f0c45400-4c5d-11eb-9e34-f2b7bd9e0482.jpg" width="300" height="621">
