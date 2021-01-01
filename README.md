@@ -12,15 +12,15 @@ Splash Screen:
 <img src="https://user-images.githubusercontent.com/35567444/103439936-71d41900-4c67-11eb-9af0-a4d72de154d7.jpg" width="300" height="621">
 
 Profile Page:
-<img src="https://user-images.githubusercontent.com/35567444/103438870-f0c45400-4c5d-11eb-9e34-f2b7bd9e0482.jpg" width="300" height="621">
+<img src="https://user-images.githubusercontent.com/35567444/103439979-f7f05f80-4c67-11eb-9774-53912f43b8e4.jpg" width="300" height="621">
+<img src="https://user-images.githubusercontent.com/35567444/103439983-fb83e680-4c67-11eb-8397-6e1285618722.jpg" width="300" height="621">
+<img src="https://user-images.githubusercontent.com/35567444/103439984-fe7ed700-4c67-11eb-9d05-c88085eb56b1.jpg" width="300" height="621">
 
 Contact List Page:
-<img src="https://user-images.githubusercontent.com/35567444/103438870-f0c45400-4c5d-11eb-9e34-f2b7bd9e0482.jpg" width="300" height="621">
-
-Request Page:
-<img src="https://user-images.githubusercontent.com/35567444/103438870-f0c45400-4c5d-11eb-9e34-f2b7bd9e0482.jpg" width="300" height="621">
+<img src="https://user-images.githubusercontent.com/35567444/103440003-19e9e200-4c68-11eb-9703-10a4327d810f.jpg" width="300" height="621">
+<img src="https://user-images.githubusercontent.com/35567444/103440007-1e15ff80-4c68-11eb-941c-aa1094ec6ffa.jpg" width="300" height="621">
 
 Settings Page:
-<img src="https://user-images.githubusercontent.com/35567444/103438870-f0c45400-4c5d-11eb-9e34-f2b7bd9e0482.jpg" width="300" height="621">
+<img src="https://user-images.githubusercontent.com/35567444/103440014-31c16600-4c68-11eb-8e51-8264d661e79e.jpg" width="300" height="621">
 
 
