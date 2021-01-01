@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/mainBlue"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ContactActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:paddingBottom="70dp"
+            >
+
+
+
+            <TextView
+                android:id="@+id/contactsMainHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/gilroy_extrabold"
+                android:text= "Contacts"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="25sp"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/contactsMainDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Who should we erase your Number from?"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/contactsMainHeading"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"
+
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/phoneNumberLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/contactsMainDescription"
+                android:layout_marginTop="50dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/contacts_bg"
+                >
+
+                <TextView
+                    android:id="@+id/phoneNumberHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Phone Number"
+                    android:autoSizeTextType="uniform"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/gilroy_extrabold"
+                    android:textSize="21sp"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:ccp_showFlag="false"
+                    app:ccpDialog_keyboardAutoPopup="false"
+                    app:layout_constraintTop_toBottomOf="@id/phoneNumberHeading"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    app:ccp_textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/phoneNumberEdit"
+                    app:ccp_arrowColor="@color/black"
+                    app:ccpDialog_allowSearch="true"
+                    app:ccpDialog_textColor="@color/black"
+                    app:ccp_defaultNameCode="IN"/>
+
+
+                <EditText
+                    android:id="@+id/phoneNumberEdit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/average_sans"
+                    android:textSize="17sp"
+                    android:inputType="phone"
+                    android:backgroundTint="@color/grayMain"
+
+                    android:hint="Enter Number Here"
+                    app:layout_constraintTop_toBottomOf="@id/phoneNumberHeading"
+                    app:layout_constraintStart_toEndOf="@id/ccp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:textColorHint="@color/grayMain"
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/recentlyDeletedLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/contacts_bg"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintTop_toBottomOf="@id/phoneNumberLayout"
+                android:layout_marginTop="20dp"
+                >
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/noRecentAnimation"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:lottie_autoPlay="false"
+                    app:layout_constraintTop_toBottomOf="@id/recentDeletedHeading"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/no_recents_contacts"
+
+                    />
+
+                <TextView
+                    android:id="@+id/noRecentText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/gilroy_extrabold"
+                    android:textSize="16sp"
+                    android:gravity="left"
+                    android:layout_marginRight="5dp"
+                    android:text="You haven't deleted your Number from Anyone yet..."
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recentDeletedHeading"
+                    app:layout_constraintStart_toEndOf="@id/noRecentAnimation"
+                    app:layout_constraintBottom_toBottomOf="@id/noRecentAnimation"
+                    />
+
+                <TextView
+                    android:id="@+id/recentDeletedHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Recently Deleted"
+                    android:fontFamily="@font/gilroy_extrabold"
+                    android:textSize="21sp"
+                    android:autoSizeTextType="uniform"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recentlyDeletedRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal"
+                    android:layout_marginHorizontal="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/recentDeletedHeading"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="15dp"
+                    />
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contactListLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/recentlyDeletedLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="25dp"
+                android:paddingBottom="7dp"
+                android:background="@drawable/contacts_bg"
+                >
+
+                <TextView
+                    android:id="@+id/allContactsHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="All Contacts"
+                    android:gravity="center"
+                    android:fontFamily="@font/gilroy_extrabold"
+                    android:textSize="23sp"
+                    android:autoSizeTextType="uniform"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/searchLayout"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/allContactsHeading"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="15dp"
+                    app:cardCornerRadius="7dp"
+                    android:layout_marginHorizontal="7dp"
+                    android:elevation="10dp"
+                    tools:targetApi="lollipop">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        >
+
+                        <ImageView
+                            android:id="@+id/searchImage"
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:background="@color/transparent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/search"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginVertical="10dp"
+                            android:layout_marginStart="5dp" />
+
+                        <TextView
+                            android:id="@+id/searchButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:textColor="@color/white"
+                            android:background="@color/searchBlue"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:text="GO"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/gilroy_extrabold"
+                            android:paddingVertical="10dp"
+                            android:textSize="14sp"
+                            android:paddingHorizontal="20dp"
+
+                            />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/searchButtonAnim"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="@id/searchButton"
+                            app:layout_constraintStart_toStartOf="@id/searchButton"
+                            app:layout_constraintEnd_toEndOf="@id/searchButton"
+                            app:layout_constraintBottom_toBottomOf="@id/searchButton"
+                            android:background="@color/transparent"
+                            app:lottie_loop="true"
+                            android:visibility="gone"
+                            app:lottie_rawRes="@raw/loading_search"
+                            android:scaleType="fitCenter"
+                            app:lottie_autoPlay="false"
+                            />
+
+
+
+                        <EditText
+                            android:id="@+id/searchEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:background="@color/transparent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/searchImage"
+                            app:layout_constraintEnd_toStartOf="@id/searchButton"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="3dp"
+                            android:textColor="@color/mainBlue"
+                            android:fontFamily="@font/average_sans"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColorHint="@color/grayMain"
+                            android:hint="Search"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="3dp" />
+
+
+
+
+
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/allContactsRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_marginHorizontal="7dp"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/searchLayout"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/contactLoadingLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/searchLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="25dp"
+                    >
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/loadingContactsAnimation"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        android:scaleType="centerCrop"
+                        app:lottie_rawRes="@raw/loading_contact_bottomsheet_2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+
+
+                        />
+
+                    <TextView
+                        android:id="@+id/loadingText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/montserrat"
+                        android:textSize="20sp"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:text="Loading Your Contacts..."
+                        android:layout_marginTop="10dp"
+                        />
+
+                </LinearLayout>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <nl.joery.animatedbottombar.AnimatedBottomBar
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:abb_iconSize="21sp"
+
+        app:abb_indicatorAppearance="round"
+        app:abb_indicatorColor="@color/mainBlue"
+        app:abb_indicatorHeight="5dp"
+
+        app:abb_indicatorLocation="top"
+        app:abb_indicatorMargin="7dp"
+
+        app:abb_rippleColor="@color/rippleBlue"
+        app:abb_rippleEnabled="true"
+        app:abb_selectedIndex="0"
+        app:abb_selectedTabType="text"
+        app:abb_tabAnimation="slide"
+        app:abb_tabAnimationSelected="slide"
+        app:abb_tabColor="@color/bottom_unselected"
+        app:abb_tabColorSelected="@color/mainBlue"
+        app:abb_tabs="@menu/bottom_tabs"
+        app:abb_textAppearance="@style/bottomText"
+        app:abb_textSize="14sp"
+        app:abb_textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

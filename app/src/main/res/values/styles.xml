@@ -1,0 +1,52 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="bottomText">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    This worked for me when using BottomSheetDialogFragment:
+
+    public class CustomDialogFragment extends BottomSheetDialogFragment {
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.CustomBottomSheetDialogTheme);
+    }
+
+    ...
+    }
+    Also add this to your styles.xml
+
+    <style name="CustomBottomSheetDialogTheme_Contacts" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle_Contacts</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle_Contacts" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="behavior_peekHeight">600dp</item>
+    </style>
+
+    <style name="TextAppearance.App.TextInputLayout" parent="@android:style/TextAppearance">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
+
+
+
+</resources>

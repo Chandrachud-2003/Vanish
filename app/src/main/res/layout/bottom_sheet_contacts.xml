@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/transparent"
+
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:background="@color/transparent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tempConstraintLayout_BottomContact"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottomContactDivider1"
+            android:background="@drawable/bottom_sheet_contact_bg"
+            android:paddingBottom="50dp"
+            >
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/loadingContactsBottomAnimation"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+
+                app:lottie_rawRes="@raw/loading_contact_bottomsheet_2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="50dp"
+
+                app:lottie_loop="true"
+
+                />
+
+            <TextView
+
+                app:layout_constraintTop_toBottomOf="@id/loadingContactsBottomAnimation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+                android:id="@+id/bottomContactLoadingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/mainBlue"
+                android:textSize="20sp"
+                android:fontFamily="@font/average_sans"
+                android:textStyle="bold"
+                android:text="Please wait..."
+                />
+
+
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/subConstraintLayout_BottomContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        >
+
+
+                <ImageButton
+                    android:id="@+id/backButton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/transparent"
+                    android:padding="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/back_contact_bottom"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nameBottomContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:layout_marginTop="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/phoneBottomContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/average_sans"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/loginMain"
+            android:maxLines="1"
+            app:layout_constraintTop_toBottomOf="@id/nameBottomContact"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/warningLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/phoneBottomContact"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            >
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/bottomWarningAnimation"
+                android:layout_width="40dp"
+                android:scaleType="centerCrop"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/warning_contacts"
+                android:layout_height="40dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/chocoRed"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="7dp"
+                android:fontFamily="@font/average_sans"
+                android:text="Unable to Detect a Country code for this Number"
+                android:layout_gravity="center_vertical"
+                />
+
+
+
+        </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/deleteButtonBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:background="@color/transparent"
+                    android:padding="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/trash_contacts"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/warningLinearLayout" />
+
+                <ImageButton
+                    android:id="@+id/shareButtonBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:padding="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/share_contacts"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@id/deleteButtonBottom"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/deleteButtonBottom"
+
+                    app:layout_constraintTop_toTopOf="@id/deleteButtonBottom" />
+
+                <ImageButton
+                    android:id="@+id/blockBottomButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:padding="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/blocks_contacts"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@id/deleteButtonBottom"
+                    app:layout_constraintEnd_toStartOf="@id/deleteButtonBottom"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toTopOf="@id/deleteButtonBottom" />
+
+                <LinearLayout
+                    android:id="@+id/deleteNumberTextLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="@id/deleteButtonBottom"
+                    app:layout_constraintStart_toStartOf="@id/deleteButtonBottom"
+                    app:layout_constraintTop_toBottomOf="@id/deleteButtonBottom">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/average_sans"
+                        android:text="Delete Number"
+                        android:textColor="@color/loginMain"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/average_sans"
+                        android:text="From their phone"
+                        android:textColor="@color/grayMain"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/blockNumberTextLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="@id/blockBottomButton"
+                    app:layout_constraintStart_toStartOf="@id/blockBottomButton"
+                    app:layout_constraintTop_toBottomOf="@id/blockBottomButton">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/average_sans"
+                        android:text="Block"
+                        android:textColor="@color/redBottom"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+
+                        android:fontFamily="@font/average_sans"
+                        android:gravity="center"
+                        android:text="From Deleting \non your Phone"
+                        android:textColor="@color/grayMain"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/shareAppTextLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="@id/shareButtonBottom"
+                    app:layout_constraintStart_toStartOf="@id/shareButtonBottom"
+                    app:layout_constraintTop_toBottomOf="@id/shareButtonBottom">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/average_sans"
+                        android:text="Share"
+                        android:textColor="@color/purpleBottom"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="7dp"
+
+                        android:fontFamily="@font/average_sans"
+                        android:gravity="center"
+                        android:text="The App with \nthe Contact"
+                        android:textColor="@color/grayMain"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/premiumHeadingConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="40dp"
+                    android:visibility="invisible"
+                    app:layout_constraintTop_toBottomOf="@id/deleteNumberTextLayout"
+                    tools:layout_editor_absoluteX="20dp">
+
+                    <ImageView
+                        android:id="@+id/premiumCrownImgBottom"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@color/transparent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/crown_small"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/premiumBottomHeading"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/premiumBottomHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/average_sans"
+                        android:text="Why Premium?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        />
+
+                    <View
+                        android:id="@+id/premiumBottomDivider"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/premiumOrange"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/premiumCrownImgBottom"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/premiumBottomSheetBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/premium_bottom_contact_bg"
+                    android:paddingBottom="20dp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/premiumHeadingConstraintLayout">
+
+                    <Button
+                        android:id="@+id/premiumBottomButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:background="@drawable/bottom_premium_button_bg"
+                        android:fontFamily="@font/gilroy_extrabold"
+                        android:minHeight="40dp"
+                        android:paddingHorizontal="20dp"
+                        android:text="Unlock Premium"
+                        android:textAllCaps="false"
+                        android:textColor="@color/premiumBottomText"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/premiumBottomFeaturesLayout2"
+
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/premiumBottomFeaturesLayout2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="15dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/premiumBottomFeaturesLayout1"
+                        app:layout_constraintTop_toBottomOf="@id/premiumBottomBannerHeading2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            >
+
+                            <ImageView
+                                android:id="@+id/deleteBottomPremiumImage"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:background="@color/transparent"
+                                android:src="@drawable/delete_premium_small" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="7dp"
+                                android:fontFamily="@font/average_sans"
+                                android:text="Delete from even Premium Users"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal"
+
+                            >
+
+                            <ImageView
+                                android:id="@+id/notifyBottomPremiumImage"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:background="@color/transparent"
+                                android:src="@drawable/notify_premium_small" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="7dp"
+                                android:fontFamily="@font/average_sans"
+                                android:text="Get instantly notified for all attempted Deletions"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/premiumBottomFeaturesLayout1"
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="30dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toStartOf="@id/premiumBottomFeaturesLayout2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/premiumBottomBannerHeading2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            >
+
+                            <ImageView
+                                android:id="@+id/removeAdsBottomPremiumImage"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:background="@color/transparent"
+                                android:src="@drawable/no_ads_small" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="7dp"
+                                android:fontFamily="@font/average_sans"
+                                android:text="Remove ADs"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal"
+
+                            >
+
+                            <ImageView
+                                android:id="@+id/blockBottomPremiumImage"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:background="@color/transparent"
+                                android:src="@drawable/block_premium_small" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="7dp"
+                                android:fontFamily="@font/average_sans"
+                                android:text="Block all Non-Premium Users"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/premiumBottomBannerHeading2"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/average_sans"
+                        android:gravity="center"
+                        android:text="&amp; So Much More!"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@id/premiumBottomBannerHeading"
+                        app:layout_constraintStart_toStartOf="@id/premiumBottomBannerHeading"
+                        app:layout_constraintTop_toBottomOf="@id/premiumBottomBannerHeading" />
+
+                    <TextView
+                        android:id="@+id/premiumBottomBannerHeading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/gilroy_extrabold"
+                        android:gravity="center"
+                        android:lineSpacingExtra="5dp"
+                        android:text="Block Deletions from your Phone"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/premiumBottomLottie" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/premiumBottomLottie"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:background="@color/transparent"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/premium_animation"
+
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/contactProfilePicture"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:adjustViewBounds="true"
+
+        android:background="@color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        android:scaleType="centerCrop"
+        />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/contactProfilePictureAnimation"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:lottie_loop="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="@id/contactProfilePicture"
+            app:layout_constraintStart_toStartOf="@id/contactProfilePicture"
+            app:layout_constraintEnd_toEndOf="@id/contactProfilePicture"
+            app:layout_constraintBottom_toBottomOf="@id/contactProfilePicture"
+
+
+            />
+
+    <View
+        android:id="@+id/bottomContactDivider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/contactProfilePicture"
+        app:layout_constraintBottom_toBottomOf="@id/contactProfilePicture"
+        />
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+

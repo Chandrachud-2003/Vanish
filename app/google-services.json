@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "51952074150",
+    "firebase_url": "https://vanishproject-3ff78.firebaseio.com",
+    "project_id": "vanishproject-3ff78",
+    "storage_bucket": "vanishproject-3ff78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51952074150:android:7ea7125f589bca8a4da367",
+        "android_client_info": {
+          "package_name": "com.chandrachud.vanish"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51952074150-9p4o85e888tslanbr2ig3gcmukfrqaus.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chandrachud.vanish",
+            "certificate_hash": "af5ef723bca3e177fc5f6ce64dfdb5b81305b2c8"
+          }
+        },
+        {
+          "client_id": "51952074150-qdc9qp1ba0m8h7ij75kcfsadjv9dv3ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhZN4F29EWPJHWKfvgc6Nd_FE9v8mXnh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51952074150-qdc9qp1ba0m8h7ij75kcfsadjv9dv3ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-1286755872665192~1742695696"
+    }
+  ],
+  "configuration_version": "1"
+}

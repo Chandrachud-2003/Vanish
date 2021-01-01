@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfile"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="15dp"
+        >
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/back_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:id="@+id/headingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/backButton"
+            app:layout_constraintStart_toStartOf="@id/backButton"
+            android:fontFamily="@font/gilroy_extrabold"
+            android:text="Edit Profile"
+            android:textColor="@color/mainBlue"
+            android:textSize="27sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp" />
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@color/transparent"
+            android:src="@drawable/male_1_large"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toBottomOf="@id/headingText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="30dp"
+            />
+
+        <ImageView
+            android:id="@+id/editProfilePicImg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="5dp"
+
+            android:background="@color/transparent"
+            app:layout_constraintBottom_toBottomOf="@id/profileImage"
+            app:layout_constraintEnd_toEndOf="@id/profileImage"
+            android:src="@drawable/edit_profile_pic"
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/profileImage"
+            android:layout_marginTop="50dp"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+            app:boxStrokeColor="@color/blue"
+            android:layout_marginHorizontal="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/mainBlue"
+                android:fontFamily="@font/average_sans"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/nameInputLayout"
+            android:layout_marginTop="10dp"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+
+            app:boxStrokeColor="@color/blue"
+            android:layout_marginHorizontal="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/mainBlue"
+                android:fontFamily="@font/average_sans"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/phoneInputLayout"
+            android:layout_marginTop="10dp"
+            app:boxStrokeColor="@color/blue"
+            android:layout_marginHorizontal="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email ID"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/mainBlue"
+                android:fontFamily="@font/average_sans"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/updateButton"
+            app:layout_constraintTop_toBottomOf="@id/emailInputLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="70dp"
+            app:cardBackgroundColor="@color/blue"
+            app:cardCornerRadius="7dp"
+            android:elevation="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/updateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_extrabold"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:text="UPDATE"
+                android:textSize="20dp"
+                android:paddingVertical="10dp"
+
+                />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/updateButtonAnim"
+                android:layout_width="70dp"
+                android:visibility="gone"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                app:lottie_rawRes="@raw/loading_search"
+                android:background="@color/transparent"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="false"
+                android:scaleType="fitCenter"
+
+                />
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

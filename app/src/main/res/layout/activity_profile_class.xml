@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileClass"
+    android:background="@color/profileBackBlue"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/profileBottomSheetScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="400dp"
+
+        android:paddingBottom="50dp"
+        android:background="@drawable/profile_bottom_bg"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <com.gigamole.navigationtabstrip.NavigationTabStrip
+                android:id="@+id/profileNavigation"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:nts_active_color="@color/mainBlue"
+                android:layout_marginHorizontal="30dp"
+                app:nts_color="@color/mainBlue"
+                app:nts_factor="0.8"
+                app:nts_corners_radius="20dp"
+
+
+                app:nts_gravity="bottom"
+                app:nts_inactive_color="@color/grayMain"
+                app:nts_size="15sp"
+                app:nts_weight="7dp"
+                app:nts_titles="@array/profile_titles"
+                app:nts_type="line"
+                app:nts_typeface="fonts/gilroy_extrabold.otf" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profileRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                app:layout_constraintTop_toBottomOf="@id/profileNavigation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp"
+                android:scrollbars="vertical"
+                android:fadeScrollbars="true"
+                />
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/profileBottomLoadingAnimation"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:lottie_loop="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="50dp"
+                app:lottie_autoPlay="true"
+                app:lottie_speed="2"
+
+                android:scaleType="fitCenter"
+                app:lottie_rawRes="@raw/delete_button_loading"
+                />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/emptyProfileAnim"
+                android:layout_width="230dp"
+                android:layout_height="230dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintTop_toBottomOf="@id/profileNavigation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="false"
+
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/emptyText"
+                android:gravity="center"
+                android:layout_marginHorizontal="30dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/emptyProfileAnim"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/average_sans"
+                android:textSize="17sp"
+                />
+
+
+
+
+            <TextView
+                android:id="@+id/profileLoadingText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/profileBottomLoadingAnimation"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="17sp"
+                android:layout_marginHorizontal="30dp"
+                android:text="Loading Info..."
+                />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+    <nl.joery.animatedbottombar.AnimatedBottomBar
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:abb_iconSize="21sp"
+
+        app:abb_indicatorAppearance="round"
+        app:abb_indicatorColor="@color/mainBlue"
+        app:abb_indicatorHeight="5dp"
+
+        app:abb_indicatorLocation="top"
+        app:abb_indicatorMargin="7dp"
+
+        app:abb_rippleColor="@color/rippleBlue"
+        app:abb_rippleEnabled="true"
+        app:abb_selectedIndex="0"
+        app:abb_selectedTabType="text"
+        app:abb_tabAnimation="slide"
+        app:abb_tabAnimationSelected="slide"
+        app:abb_tabColor="@color/bottom_unselected"
+        app:abb_tabColorSelected="@color/mainBlue"
+        app:abb_tabs="@menu/bottom_tabs"
+        app:abb_textAppearance="@style/bottomText"
+        app:abb_textSize="14sp"
+        app:abb_textStyle="bold"
+        android:layout_gravity="bottom"
+         />
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/profileConstraintLayout"
+        android:layout_gravity="top"
+        android:paddingBottom="50dp"
+        >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/profilePictureLoading"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            app:lottie_autoPlay="false"
+            android:layout_marginTop="35dp"
+            app:lottie_rawRes="@raw/pulse"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:lottie_loop="true"
+            android:visibility="invisible"
+            />
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:background="@color/transparent"
+            android:src="@drawable/male_1_large"
+            app:layout_constraintTop_toTopOf="@id/profilePictureLoading"
+            app:layout_constraintStart_toStartOf="@id/profilePictureLoading"
+            app:layout_constraintEnd_toEndOf="@id/profilePictureLoading"
+            app:layout_constraintBottom_toBottomOf="@id/profilePictureLoading"
+            android:layout_margin="22dp"
+            android:visibility="invisible"
+
+
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/topLoadingAnim"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:scaleType="fitCenter"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            android:layout_marginTop="50dp"
+            app:lottie_rawRes="@raw/loading_search"
+
+            />
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:layout_marginTop="7dp"
+            android:fontFamily="@font/gilroy_extrabold"
+            app:layout_constraintTop_toBottomOf="@id/profilePictureLoading"
+            app:layout_constraintStart_toStartOf="@id/profilePictureLoading"
+            app:layout_constraintEnd_toEndOf="@id/profilePictureLoading"
+            android:text="Chandrachud Gowda"
+            android:visibility="invisible"
+            />
+
+        <TextView
+            android:id="@+id/phoneText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/average_sans"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/nameText"
+            app:layout_constraintStart_toStartOf="@id/profilePictureLoading"
+            app:layout_constraintEnd_toEndOf="@id/profilePictureLoading"
+            android:text="+91 7022458655"
+            android:layout_marginTop="7dp"
+            android:textSize="18sp"
+            android:visibility="invisible"
+
+
+            />
+
+        <TextView
+            android:id="@+id/emailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/average_sans"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/phoneText"
+            app:layout_constraintStart_toStartOf="@id/profilePictureLoading"
+            app:layout_constraintEnd_toEndOf="@id/profilePictureLoading"
+            android:layout_marginTop="5dp"
+            android:text="chandrachudg@gmail.com"
+            android:textSize="16sp"
+            android:visibility="invisible"
+            />
+
+        <ImageButton
+            android:id="@+id/editButton"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@color/transparent"
+            android:padding="7dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/edit"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:visibility="invisible"
+            />
+
+        <ImageButton
+            android:id="@+id/signOutButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/transparent"
+            android:padding="7dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sign_out"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:visibility="invisible"
+            />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

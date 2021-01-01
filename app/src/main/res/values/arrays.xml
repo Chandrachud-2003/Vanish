@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="main_titles">
+        <item><b>This Week</b></item>
+        <item><b>All - Time</b></item>
+    </string-array>
+
+    <string-array name="profile_titles">
+        <item>Notifications</item>
+        <item>Deletions</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="mainBlue">#195DDD</color>
+    <color name="blue">#0032FF</color>
+    <color name="mainBackground">#F1F5F8</color>
+    <color name="mainBlue2">#376FE5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="info_blue">#3498DB</color>
+    <color name="bottom_unselected">#262626</color>
+    <color name="bottom_unselected_gray">#DCDCDC</color>
+    <color name="rippleBlue">#4F84F0</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="grayMain">#696969</color>
+    <color name="cardBackground">#195DDD</color>
+
+    <color name="contactBlue">#CAD9FC</color>
+    <color name="contactBlue2">#428DFF</color>
+    <color name="contactGreen">#26B99A</color>
+
+    <color name="loginMain">#225BB7</color>
+
+    <color name="chocoRed">#D6392E</color>
+    <color name="chocoYellow">#F3A533</color>
+
+    <color name="redBottom">#FF0000</color>
+
+    <color name="purpleBottom">#9932CC</color>
+
+    <color name="premiumOrange">#FFCD01</color>
+
+    <color name="premiumBottomText">#36175F</color>
+
+    <color name="profileBackBlue">#3467FF</color>
+
+    <color name="profileNotificationsBlue">#5690FF</color>
+
+    <color name="mainRecyclerCardBack">#4F84F0</color>
+
+    <color name="searchBlue">#5078EF</color>
+
+    <color name="searchRipple">#a2b7f6</color>
+
+    <color name="settingsBlack">#191919</color>
+    <color name="settingsGray">#747474</color>
+    <color name="settingsDivider">#343535</color>
+    <color name="settingsNotifications">#f8d5a0</color>
+    <color name="settingsPremium">#f8e187</color>
+    <color name="settingsAccount">#80b9fe</color>
+    <color name="settingsSecurity">#bfbfbf</color>
+    <color name="settingsContact">#b583c9</color>
+    <color name="settingsSignout">#83e2ca</color>
+
+</resources>

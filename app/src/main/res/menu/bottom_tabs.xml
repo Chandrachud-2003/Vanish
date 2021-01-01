@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_home"
+        android:icon="@drawable/home_bottom"
+        android:title="@string/bottom_home" />
+
+    <item
+        android:id="@+id/tab_contacts"
+        android:icon="@drawable/contacts_bottom"
+        android:title="@string/bottom_contacts" />
+    <item
+        android:id="@+id/tab_profile"
+        android:icon="@drawable/profile_bottom"
+        android:title="@string/bottom_profile" />
+
+
+    <item
+        android:id="@+id/tab_settings"
+        android:icon="@drawable/settings_bottom"
+        android:title="@string/bottom_settings" />
+
+</menu>

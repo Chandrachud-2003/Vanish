@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Vanish</string>
+    <string name="bottom_home">Home</string>
+    <string name="bottom_profile">Profile</string>
+    <string name="bottom_contacts">Contacts</string>
+    <string name="bottom_notify">Notifications</string>
+    <string name="bottom_settings">Settings</string>
+    <string name="bubble_notify"><b>NOTIFICATIONS</b></string>
+    <string name="bubble_delete"><b>DELETIONS</b></string>
+
+    <string name="bottom_default_notifications">All Clear! No recent Notifications.</string>
+    <string name="bottom_default_deleted">It looks like you haven\'t deleted your Number from anyone\'s phone yet…</string>
+    <string name="smoolider_1">When you deleted your Number from others</string>
+    <string name="smoolider_2">When others delete their Number from you</string>
+    <string name="smoolider_3">Attempts by others to delete their number from you</string>
+    <string name="smoolider_4">Non-premium Users blocked from deleting their number from you</string>
+
+
+    <string name="normal_delete_heading">Watch an Ad to support Vanish</string>
+    <string name="normal_delete_info">Vanish needs the support of you, the users to help support our App. We request you to watch this quick video Ad before we process your delete request.</string>
+
+    <string name="notfound_delete_heading">This Number is Not Registered on Vanish</string>
+    <string name="notfound_delete_info">We couldn\'t send a delete request as the number was not registered on Vanish. Consider sharing the App with the User to delete their number</string>
+
+    <string name="countrycode_delete_heading">Unable to Detect Country Code</string>
+    <string name="countrycode_delete_info">We were unable to detect a country code for the above number, please manually choose a Country Code</string>
+
+    <string name="ad_finished_heading">Ready to Delete?</string>
+    <string name="ad_finished_info">We are ready to send out your delete request, you will be notified once the deletion is complete.</string>
+
+    <string name="request_sent_heading">Request Successfully Sent!</string>
+    <string name="request_sent_info">Your delete request has been successfully sent. You will be notified about the outcome when the user receives it.</string>
+
+    <string name="request_already_sent_heading">Delete Request Already Sent</string>
+    <string name="request_already_sent_info">You have already sent a Delete Request to this Number. We\'ll notify you when your number has been Deleted from this User.</string>
+
+    <string name="premium_delete_dialog_heading">This is a Premium User</string>
+    <string name="premium_delete_dialog_info">The requested number you were trying to delete was identified as Premium. Only other Premium users can delete their number from a Premium User\'s Device. Go Premium right now to send a Delete Request to this Number!</string>
+
+
+</resources>
+
+

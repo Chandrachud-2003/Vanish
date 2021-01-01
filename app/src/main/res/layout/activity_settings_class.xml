@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsClass">
+
+    <nl.joery.animatedbottombar.AnimatedBottomBar
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:abb_iconSize="21sp"
+
+        app:abb_indicatorAppearance="round"
+        app:abb_indicatorColor="@color/mainBlue"
+        app:abb_indicatorHeight="5dp"
+
+        app:abb_indicatorLocation="top"
+        app:abb_indicatorMargin="7dp"
+
+        app:abb_rippleColor="@color/rippleBlue"
+        app:abb_rippleEnabled="true"
+        app:abb_selectedIndex="0"
+        app:abb_selectedTabType="text"
+        app:abb_tabAnimation="slide"
+        app:abb_tabAnimationSelected="slide"
+        app:abb_tabColor="@color/bottom_unselected"
+        app:abb_tabColorSelected="@color/mainBlue"
+        app:abb_tabs="@menu/bottom_tabs"
+        app:abb_textAppearance="@style/bottomText"
+        app:abb_textSize="14sp"
+        app:abb_textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/settingsBlack"
+        app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/closeButton"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/transparent"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/x_mark_settings"
+                />
+
+            <TextView
+                android:id="@+id/settingsHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:fontFamily="@font/gilroy_extrabold"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:text="Settings"
+                android:layout_marginTop="30sp"
+                android:layout_marginStart="50dp"
+                />
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@color/transparent"
+                app:layout_constraintTop_toBottomOf="@id/settingsHeading"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/male_1_large"
+                />
+
+            <TextView
+                android:id="@+id/nameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/profileImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:fontFamily="@font/montserrat"
+                android:text="Chandrachud Gowda"
+                />
+
+            <TextView
+                android:id="@+id/phoneText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/nameText"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/settingsGray"
+                android:fontFamily="@font/montserrat"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="+917022458655"
+                />
+
+            <View
+                android:id="@+id/settingsDivider"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                app:layout_constraintTop_toBottomOf="@id/phoneText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="15dp"
+                android:background="@color/settingsDivider"
+                android:layout_marginHorizontal="25dp"
+                />
+
+            <com.balysv.materialripple.MaterialRippleLayout
+               android:id="@+id/notificationsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mrl_rippleColor="@color/settingsNotifications"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleHover="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintTop_toBottomOf="@id/settingsDivider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+                android:paddingVertical="13dp"
+                >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+
+                <ImageView
+                    android:id="@+id/notificationsImage"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:background="@color/transparent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="25dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/notifications_settings"
+
+                    />
+
+
+                <com.bitvale.switcher.SwitcherX
+                    android:id="@+id/notificationsSwitcher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="25dp"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/notificationsImage"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="7dp"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/white"
+                    android:text="Notifications"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toStartOf="@id/notificationsSwitcher"
+
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/premiumLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mrl_rippleColor="@color/settingsPremium"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleHover="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintTop_toBottomOf="@id/notificationsLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingVertical="13dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/premiumImage"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:background="@color/transparent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="25dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/premium_settings"
+
+                        />
+
+
+                    <com.bitvale.switcher.SwitcherX
+                        android:id="@+id/premiumSwitcher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="25dp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/premiumImage"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="7dp"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="@color/white"
+                        android:text="Premium"
+                        android:textSize="20sp"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toStartOf="@id/premiumSwitcher"
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/accountLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mrl_rippleColor="@color/settingsAccount"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleHover="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintTop_toBottomOf="@id/premiumLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingVertical="13dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/accountImage"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:background="@color/transparent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="25dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/account_settings"
+
+                        />
+
+
+                    <ImageView
+                        android:id="@+id/accountArrow"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:background="@color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/arrow_settings"
+                        android:layout_marginEnd="25dp"
+                        android:rotation="180"
+
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/accountImage"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="7dp"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="@color/white"
+                        android:text="Account Preferences"
+                        android:textSize="20sp"
+                        android:maxLines="1"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toStartOf="@id/accountArrow"
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/securityLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mrl_rippleColor="@color/settingsSecurity"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleHover="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintTop_toBottomOf="@id/accountLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingVertical="13dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/securityImage"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:background="@color/transparent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="25dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/security_settings"
+
+                        />
+
+
+                    <ImageView
+                        android:id="@+id/securityArrow"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:background="@color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/arrow_settings"
+                        android:layout_marginEnd="25dp"
+                        android:rotation="180"
+
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/securityImage"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="7dp"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="@color/white"
+                        android:text="Security"
+                        android:textSize="20sp"
+                        android:maxLines="1"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toStartOf="@id/securityArrow"
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/contactLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mrl_rippleColor="@color/settingsContact"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleHover="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintTop_toBottomOf="@id/securityLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingVertical="13dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/contactImage"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:background="@color/transparent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="25dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/contact_settings"
+
+                        />
+
+
+                    <ImageView
+                        android:id="@+id/contactArrow"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:background="@color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/arrow_settings"
+                        android:layout_marginEnd="25dp"
+                        android:rotation="180"
+
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/contactImage"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="7dp"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="@color/white"
+                        android:text="Contact Us"
+                        android:textSize="20sp"
+                        android:maxLines="1"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toStartOf="@id/contactArrow"
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/signoutLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mrl_rippleColor="@color/settingsSignout"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleHover="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintTop_toBottomOf="@id/contactLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingVertical="13dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/signoutImage"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:background="@color/transparent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="25dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/signout_settings"
+
+                        />
+
+
+                    <ImageView
+                        android:id="@+id/signoutArrow"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:background="@color/transparent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/arrow_settings"
+                        android:layout_marginEnd="25dp"
+                        android:rotation="180"
+
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/signoutImage"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="7dp"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="@color/white"
+                        android:text="Sign Out"
+                        android:textSize="20sp"
+                        android:maxLines="1"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toStartOf="@id/signoutArrow"
+
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

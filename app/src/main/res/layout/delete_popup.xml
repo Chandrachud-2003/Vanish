@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_marginHorizontal="30dp"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center"
+        android:background="@drawable/background_delete_dialog"
+
+        android:paddingBottom="30dp"
+
+        >
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/deletePopupAnimation"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitCenter"
+        app:lottie_loop="true"
+        />
+
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/countryCodePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:ccpDialog_keyboardAutoPopup="false"
+        app:ccp_textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        app:ccpDialog_allowSearch="true"
+        app:ccpDialog_textColor="@color/black"
+
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loadingPopupAnimation"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/infinity_loading"
+        app:lottie_autoPlay="false"
+        android:visibility="invisible"
+        android:scaleType="centerCrop"
+
+        />
+
+    <TextView
+        android:id="@+id/loadingText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:text="Setting up your Ad..."
+        android:textSize="18sp"
+        android:textColor="@color/mainBlue"
+        android:visibility="invisible"
+        android:fontFamily="@font/average_sans"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/loadingPopupAnimation"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+
+        />
+
+    <TextView
+        android:id="@+id/headingPopupText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/mainBlue"
+        app:layout_constraintTop_toBottomOf="@id/deletePopupAnimation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/gilroy_extrabold"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center"
+        android:text="Watch a short Ad to Support Vanish"
+        />
+
+        <TextView
+            android:id="@+id/headingPhoneText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="15dp"
+            android:textColor="@color/mainBlue"
+            app:layout_constraintTop_toBottomOf="@id/headingPopupText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="25dp"
+            android:text="+91 7022458655"
+            android:textSize="17sp"
+
+
+            />
+
+    <TextView
+        android:id="@+id/infoPopupText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Vanish needs the support of you, the users to help support our App. We request you to watch this quick video Ad before we process your delete request."
+        android:gravity="center"
+        android:fontFamily="@font/average_sans"
+        app:layout_constraintTop_toBottomOf="@id/headingPhoneText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        />
+
+
+        <TextView
+            android:id="@+id/mainPopupButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:background="@drawable/popup_main_button_bg"
+            android:fontFamily="@font/gilroy_extrabold"
+            android:textSize="16sp"
+            android:text="Watch AD"
+            android:paddingVertical="7dp"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintTop_toBottomOf="@id/infoPopupText"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="10dp"
+            />
+
+        <TextView
+            android:id="@+id/cancelPopupButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@drawable/popup_cancel_button_bg"
+            app:layout_constraintTop_toBottomOf="@id/infoPopupText"
+            app:layout_constraintEnd_toStartOf="@id/mainPopupButton"
+            android:layout_marginRight="7dp"
+            android:fontFamily="@font/gilroy_extrabold"
+            android:paddingVertical="7dp"
+            android:textSize="16sp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginTop="35dp"
+            android:text="Cancel"
+            />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+

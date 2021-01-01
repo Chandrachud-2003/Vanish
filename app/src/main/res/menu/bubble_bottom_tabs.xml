@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bubbleNotify"
+        android:title="@string/bubble_notify"
+        android:icon="@drawable/notification_bottom_sheet"/>
+
+    <item
+        android:id="@+id/bubbleDeletions"
+        android:title="@string/bubble_delete"
+        android:icon="@drawable/delete_bottom_sheet"/>
+
+
+</menu>

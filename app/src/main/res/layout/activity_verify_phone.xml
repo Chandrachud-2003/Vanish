@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+<androidx.core.widget.NestedScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/white"
+
+tools:context=".VerifyPhone">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="50dp"
+    >
+
+    <ImageView
+        android:id="@+id/verifyImage"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/phone_number_auto_check"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:src="@drawable/back_blue"
+        android:padding="7dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        />
+
+    <TextView
+        android:id="@+id/signInGoogleInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/verifyImage"
+        android:layout_marginLeft="25dp"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat"
+        android:text="Please Link your Google Account"
+
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/googleSignInConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/signInGoogleInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="25dp"
+        android:paddingVertical="5dp"
+        android:background="@drawable/signup_main_bg"
+        >
+
+        <ImageView
+            android:id="@+id/googleImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:src="@drawable/google_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:id="@+id/googleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Sign-In with Google"
+            android:fontFamily="@font/gilroy_extrabold"
+            android:textSize="16sp"
+            android:autoSizeTextType="uniform"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/googleImage"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@id/googleAnimationView"
+            />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/googleAnimationView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="15dp"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/phoneConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/googleSignInConstraintLayout"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="25dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/verifyPhoneImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/phone_gray_30"
+            android:layout_marginVertical="5dp"
+            android:layout_marginLeft="5dp"
+            />
+
+        <TextView
+            android:id="@+id/verifyPhoneEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginHorizontal="20dp"
+            android:textAllCaps="false"
+            android:text="Phone Number"
+            android:background="@color/transparent"
+            app:layout_constraintStart_toEndOf="@id/verifyPhoneImage"
+            android:fontFamily="@font/average_sans"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/verifyPhoneAnimation"
+
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/verifyPhoneAnimation"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="false"
+            android:scaleType="centerCrop"
+            android:layout_marginVertical="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/phoneInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        app:layout_constraintTop_toBottomOf="@id/phoneConstraintLayout"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@id/phoneConstraintLayout"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/loginMain"
+        android:layout_marginTop="7dp"
+        android:text="Unable to Verify Phone Number, \nuse OTP instead"
+        />
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_main_bg"
+        android:text="Continue"
+        app:layout_constraintTop_toBottomOf="@id/phoneInfoText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp"
+        android:paddingHorizontal="50dp"
+
+        android:paddingVertical="5dp"
+        android:fontFamily="@font/gilroy_extrabold"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:clickable="true"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

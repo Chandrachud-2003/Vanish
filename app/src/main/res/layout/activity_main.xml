@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:background="@color/mainBackground"
+android:layout_height="match_parent"
+android:fitsSystemWindows="true"
+tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/bottomSheetScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_main_bg"
+        app:behavior_hideable="false"
+
+
+        app:behavior_peekHeight="300dp"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+            <me.ibrahimsn.lib.SmoothBottomBar
+                android:id="@+id/bubbleBottomSheetBar"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:backgroundColor="@color/transparent"
+                app:textColor="@color/white"
+                app:textSize="16sp"
+                app:iconSize="27dp"
+
+                android:layout_marginTop="20dp"
+                app:indicatorColor="@color/mainBlue"
+                app:indicatorRadius="15dp"
+
+                app:itemPadding="10dp"
+                app:iconTint="#C8FFFFFF"
+                app:iconTintActive="@color/white"
+                app:menu="@menu/bubble_bottom_tabs"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mainBottomRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                app:layout_constraintTop_toBottomOf="@id/bubbleBottomSheetBar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="15dp"
+
+
+                />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/bottomSheetLottie"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:layout_constraintTop_toBottomOf="@id/bubbleBottomSheetBar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:lottie_rawRes="@raw/loading_main" />
+
+            <TextView
+                android:id="@+id/bottomSheetDefaultText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:gravity="center"
+                android:textAllCaps="true"
+                app:layout_constraintTop_toBottomOf="@id/bottomSheetLottie"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/montserrat"
+                />
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/mainProfileInfoLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/infoButton">
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/profilePicture"
+                android:scaleType="centerCrop"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/grayMain"
+                android:src="@drawable/random_1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical"
+                android:visibility="visible"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_light"
+                    android:text=""
+                    android:textColor="@color/grayMain"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fullNameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <LinearLayout
+            android:id="@+id/mainFilterNavigationLayout"
+            android:layout_width="200dp"
+            android:layout_height="57dp"
+
+            android:orientation="vertical"
+            android:rotation="270"
+            app:layout_constraintEnd_toEndOf="@id/mainProfileInfoLayout"
+            app:layout_constraintEnd_toStartOf="@id/mainProfileInfoLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/alignMainDivider"
+            app:layout_constraintTop_toBottomOf="@id/mainProfileInfoLayout"
+
+
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp">
+
+            <com.gigamole.navigationtabstrip.NavigationTabStrip
+                android:id="@+id/mainFilterNavigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                app:nts_active_color="@color/black"
+                app:nts_color="@color/mainBlue"
+                app:nts_factor="0.8"
+                app:nts_corners_radius="20dp"
+
+                app:nts_gravity="bottom"
+                app:nts_inactive_color="@color/grayMain"
+                app:nts_size="14sp"
+                app:nts_weight="7dp"
+                app:nts_titles="@array/main_titles"
+                app:nts_type="point"
+                app:nts_typeface="@font/montserrat" />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:src="@drawable/premium_crown_main" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/infoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/bottom_unselected_gray"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:src="@drawable/info_main" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <nl.joery.animatedbottombar.AnimatedBottomBar
+            android:id="@+id/bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:abb_iconSize="21sp"
+
+            app:abb_indicatorAppearance="round"
+            app:abb_indicatorColor="@color/mainBlue"
+            app:abb_indicatorHeight="5dp"
+
+            app:abb_indicatorLocation="top"
+            app:abb_indicatorMargin="7dp"
+
+            app:abb_rippleColor="@color/rippleBlue"
+            app:abb_rippleEnabled="true"
+            app:abb_selectedIndex="0"
+            app:abb_selectedTabType="text"
+            app:abb_tabAnimation="slide"
+            app:abb_tabAnimationSelected="slide"
+            app:abb_tabColor="@color/bottom_unselected"
+            app:abb_tabColorSelected="@color/mainBlue"
+            app:abb_tabs="@menu/bottom_tabs"
+            app:abb_textAppearance="@style/bottomText"
+            app:abb_textSize="14sp"
+            app:abb_textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/alignMainDivider"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            android:background="@color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+            />
+
+        <com.av.smoothviewpager.Smoolider.SmoothViewpager
+            android:id="@+id/smooliderLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/transparent"
+            android:clipToPadding="false"
+            android:layout_marginVertical="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mainFilterNavigationLayout"
+            app:layout_constraintTop_toBottomOf="@id/mainProfileInfoLayout"
+            app:layout_constraintBottom_toBottomOf="@id/alignMainDivider"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
